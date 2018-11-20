@@ -11,11 +11,6 @@ The Bluemix Mobile Starter for Weather showcases getting a forecast using the co
 * Xcode 8.0
 * Swift 3.0
 
-## Configuration
-
-* [Bluemix Mobile services and Weather Dependency Mangagement](#bluemix-mobile-services-and-weather-dependency-management)
-* [Weather Credential Management](#weather-credential-management)
-
 ## Bluemix Mobile services and Weather Dependency Management
 
 This starter uses the Bluemix Mobile services SDKs to use the functionality of the Mobile Analytics, Push Notifications, and Weather services.
