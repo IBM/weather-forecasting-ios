@@ -3,7 +3,7 @@
 
 # Create an iOS weather application in Swift
 
-The Bluemix Mobile Starter for Weather showcases getting a forecast using the coordinates from Apple Maps and gives you integration points for each of the Bluemix Mobile services.
+The IBM Cloud Mobile Starter for Weather showcases getting a forecast using the coordinates from Apple Maps and gives you integration points for each of the IBM Cloud Mobile services.
 
 ## Requirements
 
@@ -11,11 +11,11 @@ The Bluemix Mobile Starter for Weather showcases getting a forecast using the co
 * Xcode 8.0
 * Swift 3.0
 
-## Bluemix Mobile services and Weather Dependency Management
+## IBM Cloud Mobile services and Weather Dependency Management
 
-This starter uses the Bluemix Mobile services SDKs to use the functionality of the Mobile Analytics, Push Notifications, and Weather services.
+This starter uses the IBM Cloud Mobile services SDKs to use the functionality of the Mobile Analytics, Push Notifications, and Weather services.
 
-The Bluemix Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs, you need version 1.1.0.rc.2.
+The IBM Cloud Mobile services SDK uses [CocoaPods](https://cocoapods.org/) to manage and configure dependencies. To use our latest SDKs, you need version 1.1.0.rc.2.
 
 Install CocoaPods using the following command:
 
@@ -43,11 +43,9 @@ $ pod update
 $ pod install
 ```
 
-> [View configuration](#configuration)
-
 ## Weather Credential Management
 
-Once the dependencies have been built and configured for the Bluemix Mobile service SDKs, configure the Weather credentials for the application. If you have not already created the Weather service on Bluemix, go to the [Bluemix Catalog](https://new-console.ng.bluemix.net/catalog/) and create a [Weather](https://new-console.ng.bluemix.net/catalog/services/weather-company-data/) service instance.
+Once the dependencies have been built and configured for the IBM Cloud Mobile service SDKs, configure the Weather credentials for the application. If you have not already created the Weather service on IBM Cloud, go to the [IBM Cloud Catalog](https://console.ng.bluemix.net/catalog/) and create a [Weather](https://console.ng.bluemix.net/catalog/services/weather-company-data/) service instance.
 
 A `WeatherCredentials.plist` configuration file is included in the Xcode project that includes credential configurations for Weather service:
 
@@ -61,15 +59,13 @@ Find the credentials for your `WeatherCredentials.plist` file by clicking the **
 
 ![Service credentials](README_Images/service-credentials.png)
 
-> [View configuration](#configuration)
-
 ## Run
 
 Click **Product > Run** to start the app in Xcode.
 
 ![Weather App Screenshot](README_Images/weather.png)
 
-The application allows you determine the forecast of any location using your Weather instance on Bluemix. Long click to view the forecast.
+The application allows you determine the forecast of any location using your Weather instance on IBM Cloud. Long click to view the forecast.
 
 ## License
 
