@@ -68,7 +68,6 @@ Find the credentials for your `WeatherCredentials.plist` file by clicking the **
 
 > [View configuration](#configuration)
 
-
 ## Run
 
 Click **Product > Run** to start the app in Xcode.
