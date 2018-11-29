@@ -3,6 +3,8 @@
 
 # Create an iOS weather application in Swift
 
+> We have a similar pattern available for [Android](https://github.com/IBM/weather-forecasting-android), as well!
+
 The IBM Cloud Mobile Starter for Weather showcases getting a forecast using the coordinates from Apple Maps and gives you integration points for each of the IBM Cloud Mobile services.
 
 ![](README_Images/architecture.png)
