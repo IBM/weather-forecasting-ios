@@ -5,7 +5,13 @@
 
 > We have a similar pattern available for [Android](https://github.com/IBM/weather-forecasting-android), as well!
 
-The IBM Cloud Mobile Starter for Weather showcases getting a forecast using the coordinates from Apple Maps and gives you integration points for each of the IBM Cloud Mobile services.
+In this code pattern, you will create an iOS weather forecasting app using Apple Maps and the Weather Company Data service. Use this service to consume current conditions or hourly, daily, and intraday forecasts based on Apple Maps geolocation coordinations of your user's device. Use this pattern to solve real business problems where weather has a significant impact on the outcome.
+
+When you have completed this code pattern, you will understand how to:
+
+* Provision and integrate the Weather Company Data service
+* Use Geolocation information integrated with Apple Maps
+* Connect to additional IBM Cloud services
 
 ![](README_Images/architecture.png)
 
