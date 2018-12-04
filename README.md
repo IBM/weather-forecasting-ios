@@ -25,17 +25,20 @@ Deploy the application automatically using the button above and skip to step 3 b
 
 Deploy the application manually:
 
-1. [Requirements](#1-requirements)
-1. [Configuration](#2-configuration)
-1. [Run](#3-run)
+1. [Install developer tools](#1-install-developer-tools)
+1. [Install dependencies](#2-install-dependencies)
+1. [Create a Weather service instance](#3-create-a-weather-service-instance)
+1. [Run](#4-run)
 
-## Requirements
+### 1. Install developer tools
+
+Ensure you have the [required developer tools installed from Apple](https://developer.apple.com/download/):
 
 * iOS 8.0+
 * Xcode 8.0
 * Swift 3.0
 
-## IBM Cloud Mobile services and Weather Dependency Management
+### 2. Install dependencies
 
 This starter uses the IBM Cloud Mobile services SDKs to use the functionality of the Mobile Analytics, Push Notifications, and Weather services.
 
@@ -67,23 +70,15 @@ $ pod update
 $ pod install
 ```
 
-## Weather Credential Management
+### 3. Create a Weather service instance 
 
-Once the dependencies have been built and configured for the IBM Cloud Mobile service SDKs, configure the Weather credentials for the application. If you have not already created the Weather service on IBM Cloud, go to the [IBM Cloud Catalog](https://console.ng.bluemix.net/catalog/) and create a [Weather](https://console.ng.bluemix.net/catalog/services/weather-company-data/) service instance.
+Use the [IBM Cloud Catalog](https://console.ng.bluemix.net/catalog/) and create a [Weather Company Data](https://console.ng.bluemix.net/catalog/services/weather-company-data/) service instance.
 
-A `WeatherCredentials.plist` configuration file is included in the Xcode project that includes credential configurations for Weather service:
-
-| Key              | Value           |
-| :-------------:  |:-------------:|
-| host          | twcservice.mybluemix.net |
-| username      | 6123kljda-e486-4bcf-89ed-063050df742f |
-| password      | zlkj23lkf |
-
-Find the credentials for your `WeatherCredentials.plist` file by clicking the **Service Credentials** button:
+A `WeatherCredentials.plist` configuration file is included in the Xcode project that includes credential configurations for Weather service. Find the credentials for your `WeatherCredentials.plist` file by clicking the **Service Credentials** button:
 
 ![Service credentials](README_Images/service-credentials.png)
 
-## Run
+### 4. Run
 
 Click **Product > Run** to start the app in Xcode.
 
