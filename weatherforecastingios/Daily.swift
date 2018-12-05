@@ -1,20 +1,22 @@
-/*
- *     Copyright 2016, 2017 IBM Corp.
- *     Licensed under the Apache License, Version 2.0 (the "License");
- *     you may not use this file except in compliance with the License.
- *     You may obtain a copy of the License at
- *     http://www.apache.org/licenses/LICENSE-2.0
- *     Unless required by applicable law or agreed to in writing, software
- *     distributed under the License is distributed on an "AS IS" BASIS,
- *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *     See the License for the specific language governing permissions and
- *     limitations under the License.
- */
+/**
+ * Copyright IBM Corporation 2016,2017,2018
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 
 import Foundation
-import ObjectMapper
 
-open class Daily: Mappable {
+struct Daily {
     // The data identifier
     var _class: String?
     // The expiration time in UNIX seconds
@@ -33,7 +35,7 @@ open class Daily: Mappable {
     var daypartName: String?
     // The named time frame for the valid weather forecast in an expanded format
     var longDaypartName: String?
-    // A specialized version of the daypart_name field 
+    // A specialized version of the daypart_name field
     // Certain holidays or historic events may replace the usual daypart_name
     var altDaypartName: String?
     // The sequential number that identifies each of the forecasted days in your feed
@@ -52,7 +54,7 @@ open class Daily: Mappable {
     var popPhrase: String?
     // A code that represents explicit full set sensible weather
     var iconExtd: Int?
-    // The key to the weather icon lookup. 
+    // The key to the weather icon lookup.
     var iconCode: Int?
     // The code to enable the Weather Man animation for forecast period (TWC use only)
     var wxman: String?
@@ -116,61 +118,118 @@ open class Daily: Mappable {
     var golfIndex: Int?
     // The golf index category expressed as a phrase for the weather conditions for playing golf
     var golfCategory: String?
+}
 
-    required public init?(map: Map) {
+// Mark - Decodable Conformance
 
+// Can be automatically synthesized in Swift 4.1
+extension Daily: Decodable {
+
+    enum CodingKeys: String, CodingKey {
+        case _class = "class"
+        case expireTimeGmt = "expire_time_gmt"
+        case fcstValid = "fcst_valid"
+        case fcstValidLocal = "fcst_valid_local"
+        case dayInd = "day_ind"
+        case thunderEnum = "thunder_enum"
+        case thunderEnumPhrase = "thunder_enum_phrase"
+        case daypartName = "daypart_name"
+        case longDaypartName = "long_daypart_name"
+        case altDaypartName = "alt_daypart_name"
+        case num
+        case temp
+        case tempPhrase = "temp_phrase"
+        case hi
+        case wc
+        case pop
+        case popPhrase = "pop_phrase"
+        case iconExtd = "icon_extd"
+        case iconCode = "icon_code"
+        case wxman
+        case phrase32char = "phrase_32_char"
+        case phrase22char = "phrase_22_char"
+        case phrase12char = "phrase_12_char"
+        case subphrasePt1 = "subphrasePt1"
+        case subphrasePt2 = "subphrasePt2"
+        case subphrasePt3 = "subphrasePt3"
+        case precipType = "percip_type"
+        case rh
+        case wspd
+        case wdir
+        case wdirCardinal = "wdir_cardinal"
+        case windPhrase = "wdir_phrase"
+        case clds
+        case shortcast
+        case narrative
+        case qpf
+        case accumulationPhrase = "accumulation_phrase"
+        case snowQpf = "snow_qpf"
+        case snowRange = "snow_range"
+        case snowPhrase = "snow_phrase"
+        case snowCode = "snow_code"
+        case vocalKey = "vocal_key"
+        case qualifier
+        case qualifierCode = "qualifier_code"
+        case uvIndexRaw = "uv_index_raw"
+        case uvIndex = "uv_index"
+        case uvDesc = "uv_desc"
+        case uvWarning = "uv_warning"
+        case golfIndex = "gold_index"
+        case golfCategory = "gold_category"
     }
 
-    open func mapping(map: Map) {
-        _class <- map["class"]
-        expireTimeGmt <- map["expire_time_gmt"]
-        fcstValid <- map["fcst_valid"]
-        fcstValidLocal <- map["fcst_valid_local"]
-        dayInd <- map["day_ind"]
-        thunderEnum <- map["thunder_enum"]
-        thunderEnumPhrase <- map["thunder_enum_phrase"]
-        daypartName <- map["daypart_name"]
-        longDaypartName <- map["long_daypart_name"]
-        altDaypartName <- map["alt_ daypart_name"]
-        num <- map["num"]
-        temp <- map["temp"]
-        tempPhrase <- map["temp_phrase"]
-        hi <- map["hi"]
-        wc <- map["wc"]
-        pop <- map["pop"]
-        popPhrase <- map["pop_phrase"]
-        iconExtd <- map["icon_extd"]
-        iconCode <- map["icon_code"]
-        wxman <- map["wxman"]
-        phrase32char <- map["phrase_32char"]
-        phrase22char <- map["phrase_22char"]
-        phrase12char <- map["phrase_12char"]
-        subphrasePt1 <- map["subphrase_pt1"]
-        subphrasePt2 <- map["subphrase_pt2"]
-        subphrasePt3 <- map["subphrase_pt3"]
-        precipType <- map["precip_type"]
-        rh <- map["rh"]
-        wspd <- map["wspd"]
-        wdir <- map["wdir"]
-        wdirCardinal <- map["wdir_cardinal"]
-        windPhrase <- map["wind_phrase"]
-        clds <- map["clds"]
-        shortcast <- map["shortcast"]
-        narrative <- map["narrative"]
-        qpf <- map["qpf"]
-        accumulationPhrase <- map["accumulation_phrase"]
-        snowQpf <- map["snow_qpf"]
-        snowRange <- map["snow_range"]
-        snowPhrase <- map["snow_phrase"]
-        snowCode <- map["snow_code"]
-        vocalKey <- map["vocal_key"]
-        qualifier <- map["qualifier"]
-        qualifierCode <- map["qualifier_code"]
-        uvIndexRaw <- map["uv_index_raw"]
-        uvIndex <- map["uv_index"]
-        uvDesc <- map["uv_desc"]
-        uvWarning <- map["uv_warning"]
-        golfIndex <- map["golf_index"]
-        golfCategory <- map["golf_category"]
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        _class = try? values.decode(String.self, forKey: ._class)
+        expireTimeGmt = try? values.decode(Double.self, forKey: .expireTimeGmt)
+        fcstValid = try? values.decode(Double.self, forKey: .fcstValid)
+        fcstValidLocal = try? values.decode(Date.self, forKey: .fcstValidLocal)
+        dayInd = try? values.decode(String.self, forKey: .dayInd)
+        thunderEnum = try? values.decode(Int.self, forKey: .thunderEnum)
+        thunderEnumPhrase = try? values.decode(String.self, forKey: .thunderEnumPhrase)
+        daypartName = try? values.decode(String.self, forKey: .daypartName)
+        longDaypartName = try? values.decode(String.self, forKey: .longDaypartName)
+        altDaypartName = try? values.decode(String.self, forKey: .altDaypartName)
+        num = try? values.decode(Int.self, forKey: .num)
+        temp = try? values.decode(Int.self, forKey: .temp)
+        tempPhrase = try? values.decode(String.self, forKey: .tempPhrase)
+        hi = try? values.decode(Int.self, forKey: .hi)
+        wc = try? values.decode(Int.self, forKey: .wc)
+        pop = try? values.decode(Int.self, forKey: .popPhrase)
+        popPhrase = try? values.decode(String.self, forKey: ._class)
+        iconExtd = try? values.decode(Int.self, forKey: .iconExtd)
+        iconCode = try? values.decode(Int.self, forKey: .iconCode)
+        wxman = try? values.decode(String.self, forKey: .wxman)
+        phrase32char = try? values.decode(String.self, forKey: .phrase32char)
+        phrase22char = try? values.decode(String.self, forKey: .phrase22char)
+        phrase12char = try? values.decode(String.self, forKey: .phrase12char)
+        subphrasePt1 = try? values.decode(String.self, forKey: .subphrasePt1)
+        subphrasePt2 = try? values.decode(String.self, forKey: .subphrasePt2)
+        subphrasePt3 = try? values.decode(String.self, forKey: .subphrasePt3)
+        precipType = try? values.decode(String.self, forKey: .precipType)
+        rh = try? values.decode(Int.self, forKey: .rh)
+        wspd = try? values.decode(Int.self, forKey: .wspd)
+        wdir = try? values.decode(Int.self, forKey: .wdir)
+        wdirCardinal = try? values.decode(String.self, forKey: .wdirCardinal)
+        windPhrase = try? values.decode(String.self, forKey: .windPhrase)
+        clds = try? values.decode(Int.self, forKey: .clds)
+        shortcast = try? values.decode(String.self, forKey: .shortcast)
+        narrative = try? values.decode(String.self, forKey: .narrative)
+        qpf = try? values.decode(Float.self, forKey: .qpf)
+        accumulationPhrase = try? values.decode(String.self, forKey: .accumulationPhrase)
+        snowQpf = try? values.decode(Float.self, forKey: .snowQpf)
+        snowRange = try? values.decode(String.self, forKey: .snowRange)
+        snowPhrase = try? values.decode(String.self, forKey: .snowPhrase)
+        snowCode = try? values.decode(String.self, forKey: .snowCode)
+        vocalKey = try? values.decode(String.self, forKey: .vocalKey)
+        qualifier = try? values.decode(String.self, forKey: .qualifier)
+        qualifierCode = try? values.decode(String.self, forKey: .qualifierCode)
+        uvIndexRaw = try? values.decode(Float.self, forKey: .uvIndexRaw)
+        uvIndex = try? values.decode(Int.self, forKey: .uvIndex)
+        uvDesc = try? values.decode(String.self, forKey: .uvDesc)
+        uvWarning = try? values.decode(Int.self, forKey: .uvWarning)
+        golfIndex = try? values.decode(Int.self, forKey: .golfIndex)
+        golfCategory = try? values.decode(String.self, forKey: .golfCategory)
     }
 }

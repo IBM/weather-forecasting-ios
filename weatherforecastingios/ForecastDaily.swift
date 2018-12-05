@@ -1,20 +1,22 @@
-/*
- *     Copyright 2016, 2017 IBM Corp.
- *     Licensed under the Apache License, Version 2.0 (the "License");
- *     you may not use this file except in compliance with the License.
- *     You may obtain a copy of the License at
- *     http://www.apache.org/licenses/LICENSE-2.0
- *     Unless required by applicable law or agreed to in writing, software
- *     distributed under the License is distributed on an "AS IS" BASIS,
- *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *     See the License for the specific language governing permissions and
- *     limitations under the License.
- */
+/**
+ * Copyright IBM Corporation 2016,2017,2018
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 
 import Foundation
-import ObjectMapper
 
-open class ForecastDaily: Mappable {
+struct ForecastDaily {
     // The data identifier
     var _class: String?
     // The expiration time in UNIX seconds
@@ -71,40 +73,76 @@ open class ForecastDaily: Mappable {
     var snowCode: String?
     var day: Daily?
     var night: Daily?
+}
 
-    required public init?(map: Map) {
+// Mark - Decodable Conformance
 
+// Can be automatically synthesized in Swift 4.1
+extension ForecastDaily: Decodable {
+
+    enum CodingKeys: String, CodingKey {
+        case _class = "class"
+        case expireTimeGmt = "expire_time_gmt"
+        case fcstValid = "fcst_valid"
+        case fcstValidLocal = "fcst_valid_local"
+        case num
+        case maxTemp = "max_temp"
+        case minTemp = "min_temp"
+        case blurb
+        case blurbAuthor = "blurb_author"
+        case dow
+        case lunarPhaseCode = "lunar_phase_code"
+        case lunarPhase = "lunar_phase"
+        case lunarPhaseDay = "lunar_phase_day"
+        case sunrise
+        case sunset
+        case qualifierCode = "qualifier_code"
+        case qualifier
+        case narrative
+        case qpf
+        case torcon
+        case stormcon
+        case moonrise = "moonrise"
+        case moonset = "moonset"
+        case snowQpf = "snow_qpf"
+        case snowRange = "snow_range"
+        case snowPhrase = "snow_phrase"
+        case snowCode = "snow_code"
+        case day
+        case night
     }
 
-    open func mapping(map: Map) {
-        _class <- map["class"]
-        expireTimeGmt <- map["expire_time_gmt"]
-        fcstValid <- map["fcst_valid"]
-        fcstValidLocal <- map["fcst_valid_local"]
-        num <- map["num"]
-        maxTemp <- map["max_temp"]
-        minTemp <- map["min_temp"]
-        blurb <- map["blurb"]
-        blurbAuthor <- map["blurb_author"]
-        dow <- map["dow"]
-        lunarPhaseCode <- map["lunar_phase_code"]
-        lunarPhase <- map["lunar_phase"]
-        lunarPhaseDay <- map["lunar_phase_day"]
-        sunrise <- map["sunrise"]
-        sunset <- map["sunset"]
-        qualifierCode <- map["qualifier_code"]
-        qualifier <- map["qualifier"]
-        narrative <- map["narrative"]
-        qpf <- map["qpf"]
-        torcon <- map["torcon"]
-        stormcon <- map["stormcon"]
-        moonrise <- map["moonrise"]
-        moonset <- map["moonset"]
-        snowQpf <- map["snow_qpf"]
-        snowRange <- map["snow_range"]
-        snowPhrase <- map["snow_phrase"]
-        snowCode <- map["snow_code"]
-        day <- map["day"]
-        night <- map["night"]
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        _class = try? values.decode(String.self, forKey: ._class)
+        expireTimeGmt = try? values.decode(Double.self, forKey: .expireTimeGmt)
+        fcstValid = try? values.decode(Double.self, forKey: .fcstValid)
+        fcstValidLocal = try? values.decode(Date.self, forKey: .fcstValidLocal)
+        num = try? values.decode(Int.self, forKey: .num)
+        maxTemp = try? values.decode(Int.self, forKey: .maxTemp)
+        minTemp = try? values.decode(Int.self, forKey: .minTemp)
+        blurb = try? values.decode(String.self, forKey: .blurb)
+        blurbAuthor = try? values.decode(String.self, forKey: .blurbAuthor)
+        dow = try? values.decode(String.self, forKey: .dow)
+        lunarPhaseCode = try? values.decode(String.self, forKey: .lunarPhaseCode)
+        lunarPhase = try? values.decode(String.self, forKey: .lunarPhase)
+        lunarPhaseDay = try? values.decode(Int.self, forKey: .lunarPhaseDay)
+        sunrise = try? values.decode(Date.self, forKey: .sunrise)
+        sunset = try? values.decode(Date.self, forKey: .sunset)
+        qualifierCode = try? values.decode(String.self, forKey: .qualifierCode)
+        qualifier = try? values.decode(String.self, forKey: .qualifier)
+        narrative = try? values.decode(String.self, forKey: .narrative)
+        qpf = try? values.decode(Float.self, forKey: .qpf)
+        torcon = try? values.decode(Int.self, forKey: .torcon)
+        stormcon = try? values.decode(Int.self, forKey: .stormcon)
+        moonrise = try? values.decode(Date.self, forKey: .moonrise)
+        moonset = try? values.decode(Date.self, forKey: .moonset)
+        snowQpf = try? values.decode(Float.self, forKey: .snowQpf)
+        snowRange = try? values.decode(String.self, forKey: .snowRange)
+        snowPhrase = try? values.decode(String.self, forKey: .snowPhrase)
+        snowCode = try? values.decode(String.self, forKey: .snowCode)
+        day = try? values.decode(Daily.self, forKey: .day)
+        night = try? values.decode(Daily.self, forKey: .night)
     }
 }

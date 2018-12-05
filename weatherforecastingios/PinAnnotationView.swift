@@ -1,5 +1,5 @@
 /*
- *     Copyright 2016, 2017 IBM Corp.
+ *     Copyright 2016,2017,2018 IBM Corp.
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
  *     You may obtain a copy of the License at
@@ -17,22 +17,22 @@ class PinAnnotationView: MKPinAnnotationView {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let hitView = super.hitTest(point, with: event)
-        
-        if let _ = hitView {
+
+        if hitView != nil {
             self.superview?.bringSubview(toFront: self)
         }
         return hitView
     }
-    
+
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        
+
         let rect = self.bounds
         var isInside = rect.contains(point)
-        
+
         if !isInside {
             for subview in self.subviews {
                 isInside = subview.frame.contains(point)
-                
+
                 if isInside {
                     break
                 }

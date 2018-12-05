@@ -1,20 +1,22 @@
-/*
- *     Copyright 2016, 2017 IBM Corp.
- *     Licensed under the Apache License, Version 2.0 (the "License");
- *     you may not use this file except in compliance with the License.
- *     You may obtain a copy of the License at
- *     http://www.apache.org/licenses/LICENSE-2.0
- *     Unless required by applicable law or agreed to in writing, software
- *     distributed under the License is distributed on an "AS IS" BASIS,
- *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *     See the License for the specific language governing permissions and
- *     limitations under the License.
- */
+/**
+ * Copyright IBM Corporation 2016,2017,2018
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 
 import Foundation
-import ObjectMapper
 
-open class Observation: Mappable {
+struct Observation {
     // Primary data field to group or access data for
     var key: String?
     // The data identifier
@@ -87,47 +89,90 @@ open class Observation: Mappable {
     var uvIndex: Int?
     // Ultraviolet index description
     var uvDesc: String?
+}
 
-    required public init?(map: Map) {
+// Mark - Decodable Conformance
 
+// Can be automatically synthesized in Swift 4.1
+extension Observation: Decodable {
+
+    enum CodingKeys: String, CodingKey {
+        case key
+        case _class = "class"
+        case expireTimeGmt = "expire_time_gmt"
+        case obsId = "obs_id"
+        case obsName = "obs_name"
+        case validTimeGmt = "valid_time_gmt"
+        case wxIcon = "wx_icon"
+        case iconExtd = "icon_extd"
+        case temp
+        case wxPhrase = "wx_phrase"
+        case pressureDesc = "pressure_desc"
+        case pressureTend = "pressure_tend"
+        case wdirCardinal = "wdir_cardinal"
+        case dayInd = "day_ind"
+        case maxTemp = "max_temp"
+        case minTemp = "min_temp"
+        case dewpt
+        case rh
+        case feelsLike = "feels_like"
+        case heatIndex = "heat_index"
+        case wc
+        case qualifier
+        case qualifierSvrty = "qualifier_svrty"
+        case bluntPhrase = "blunt_phrase"
+        case tersePhrase = "terse_phrase"
+        case pressure
+        case clds
+        case vis
+        case wspd
+        case gust
+        case wdir
+        case precipTotal = "percip_total"
+        case precipHrly = "percip_hrly"
+        case snowHrly = "snow_hrly"
+        case uvIndex = "uv_index"
+        case uvDesc = "uv_desc"
     }
 
-    open func mapping(map: Map) {
-        key <- map["key"]
-        _class <- map["class"]
-        expireTimeGmt <- map["expire_time_gmt"]
-        obsId <- map["obs_id"]
-        obsName <- map["obs_name"]
-        validTimeGmt <- map["valid_time_gmt"]
-        wxIcon <- map["wx_icon"]
-        iconExtd <- map["icon_extd"]
-        temp <- map["temp"]
-        wxPhrase <- map["wx_phrase"]
-        pressureDesc <- map["pressure_desc"]
-        pressureTend <- map["pressure_tend"]
-        wdirCardinal <- map["wdir_cardinal"]
-        dayInd <- map["day_ind"]
-        maxTemp <- map["max_temp"]
-        minTemp <- map["min_temp"]
-        dewpt <- map["dewpt"]
-        rh <- map["rh"]
-        feelsLike <- map["feels_like"]
-        heatIndex <- map["heat_index"]
-        wc <- map["wc"]
-        qualifier <- map["qualifier"]
-        qualifierSvrty <- map["qualifier_svrty"]
-        bluntPhrase <- map["blunt_phrase"]
-        tersePhrase <- map["terse_phrase"]
-        pressure <- map["pressure"]
-        clds <- map["clds"]
-        vis <- map["vis"]
-        wspd <- map["wspd"]
-        gust <- map["gust"]
-        wdir <- map["wdir"]
-        precipTotal <- map["precip_total"]
-        precipHrly <- map["precip_hrly"]
-        snowHrly <- map["snow_hrly"]
-        uvIndex <- map["uv_index"]
-        uvDesc <- map["uv_desc"]
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        key = try? values.decode(String.self, forKey: .key)
+        _class = try? values.decode(String.self, forKey: ._class)
+        expireTimeGmt = try? values.decode(Double.self, forKey: .expireTimeGmt)
+        obsId = try? values.decode(String.self, forKey: .obsId)
+        obsName = try? values.decode(String.self, forKey: .obsName)
+        validTimeGmt = try? values.decode(Double.self, forKey: .validTimeGmt)
+        wxIcon = try? values.decode(Int.self, forKey: .wxIcon)
+        iconExtd = try? values.decode(Int.self, forKey: .iconExtd)
+        temp = try? values.decode(Int.self, forKey: .temp)
+        wxPhrase = try? values.decode(String.self, forKey: .wxPhrase)
+        pressureDesc = try? values.decode(String.self, forKey: .pressureDesc)
+        pressureTend = try? values.decode(Int.self, forKey: .pressureTend)
+        wdirCardinal = try? values.decode(String.self, forKey: .wdirCardinal)
+        dayInd = try? values.decode(String.self, forKey: .dayInd)
+        maxTemp = try? values.decode(Int.self, forKey: .maxTemp)
+        minTemp = try? values.decode(Int.self, forKey: .minTemp)
+        dewpt = try? values.decode(Int.self, forKey: .dewpt)
+        rh = try? values.decode(Int.self, forKey: .rh)
+        feelsLike = try? values.decode(Int.self, forKey: .feelsLike)
+        heatIndex = try? values.decode(Int.self, forKey: .heatIndex)
+        wc = try? values.decode(Int.self, forKey: .wc)
+        qualifier = try? values.decode(String.self, forKey: .qualifier)
+        qualifierSvrty = try? values.decode(String.self, forKey: .qualifierSvrty)
+        bluntPhrase = try? values.decode(String.self, forKey: .bluntPhrase)
+        tersePhrase = try? values.decode(String.self, forKey: .tersePhrase)
+        pressure = try? values.decode(Double.self, forKey: .pressure)
+        clds = try? values.decode(String.self, forKey: .clds)
+        vis = try? values.decode(Double.self, forKey: .vis)
+        wspd = try? values.decode(Int.self, forKey: .wspd)
+        gust = try? values.decode(Int.self, forKey: .gust)
+        wdir = try? values.decode(Int.self, forKey: .wdir)
+        precipTotal = try? values.decode(Float.self, forKey: .precipTotal)
+        precipHrly = try? values.decode(Float.self, forKey: .precipHrly)
+        snowHrly = try? values.decode(Float.self, forKey: .snowHrly)
+        uvIndex = try? values.decode(Int.self, forKey: .uvIndex)
+        uvDesc = try? values.decode(String.self, forKey: .uvDesc)
     }
 }
