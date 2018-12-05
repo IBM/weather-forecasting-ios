@@ -64,7 +64,7 @@ $ pod update
 $ pod install
 ```
 
-### 3. Create a Weather service instance 
+### 3. Create a Weather service instance
 
 Use the [IBM Cloud Catalog](https://console.ng.bluemix.net/catalog/) and create a [Weather Company Data](https://console.ng.bluemix.net/catalog/services/weather-company-data/) service instance.
 
