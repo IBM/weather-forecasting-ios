@@ -17,7 +17,7 @@ When you have completed this code pattern, you will understand how to:
 
 ## Steps
 
-[![](https://bluemix.net/deploy/button.png)](https://console.bluemix.net/developer/mobile/create-app?defaultDeploymentToolchain=&defaultLanguage=IOS_SWIFT&env_id=ibm%3Ayp%3Aus-south&starterKit=fad1d49e-f7b6-3aff-9b53-14673fca4399&tenantNavMode=true)
+[![](https://bluemix.net/deploy/button.png)](https://console.bluemix.net/developer/appledevelopment/create-app?defaultDeploymentToolchain=&defaultLanguage=IOS_SWIFT&env_id=ibm%3Ayp%3Aus-south&navMode=starterkits&starterKit=90b94b71-caf1-3e2b-a48e-bad99759b189)
 
 Deploy the application automatically using the button above and skip to step 4 below.
 
