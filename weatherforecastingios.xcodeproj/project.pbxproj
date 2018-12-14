@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		107DA7625D924B499F19C1F2 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 5CDFC94B98B04A98A460DC23 /* .gitignore */; };
-		531925393EDF4F23BD255789 /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = 524C2603E4124CD9B93B7E20 /* LICENSE */; };
-		13C96E217AA7499A9B2F4E20 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0151188A75C142DEA5578895 /* BMSCredentials.plist */; };
+		F851EB65ED3E4700A686CF04 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = B0F0568CA04E4A4A9726E81F /* .gitignore */; };
+		0E85C16D8B94475E9A1D2744 /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = C2DA43ADAD4242A7B59A5B9E /* LICENSE */; };
+		B1D866015810404185A0B873 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F8AC72DFB5D47A59171C9F8 /* BMSCredentials.plist */; };
 		8421BC1C1D99A554007ECB49 /* PinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421BC1B1D99A554007ECB49 /* PinAnnotationView.swift */; };
 		846CD2431D74B8020096CFB7 /* CurrentCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CD2411D74B8020096CFB7 /* CurrentCondition.swift */; };
 		846CD2441D74B8020096CFB7 /* DailyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CD2421D74B8020096CFB7 /* DailyForecast.swift */; };
@@ -35,9 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5CDFC94B98B04A98A460DC23 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
-		524C2603E4124CD9B93B7E20 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
-		0151188A75C142DEA5578895 /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
+		B0F0568CA04E4A4A9726E81F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
+		C2DA43ADAD4242A7B59A5B9E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
+		8F8AC72DFB5D47A59171C9F8 /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
 		7F80DA9AC1CF027D7CFBFA07 /* Pods-weatherforecastingios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherforecastingios.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherforecastingios/Pods-weatherforecastingios.release.xcconfig"; sourceTree = "<group>"; };
 		8421BC1B1D99A554007ECB49 /* PinAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotationView.swift; sourceTree = "<group>"; };
 		846CD2411D74B8020096CFB7 /* CurrentCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCondition.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		848B4C361D67658E00D485B8 /* weatherforecastingios */ = {
 			isa = PBXGroup;
 			children = (
-				0151188A75C142DEA5578895 /* BMSCredentials.plist */,
+				8F8AC72DFB5D47A59171C9F8 /* BMSCredentials.plist */,
 				8421BC1D1D9AB741007ECB49 /* model */,
 				8421BC1E1D9AB75B007ECB49 /* callout */,
 				848B4C371D67658E00D485B8 /* AppDelegate.swift */,
@@ -222,7 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13C96E217AA7499A9B2F4E20 /* BMSCredentials.plist in Resources */,
+				B1D866015810404185A0B873 /* BMSCredentials.plist in Resources */,
 				848B4C421D67658E00D485B8 /* LaunchScreen.storyboard in Resources */,
 				848B4C3F1D67658E00D485B8 /* Assets.xcassets in Resources */,
 				84A0BFA91D996938004616B2 /* callout.xib in Resources */,
