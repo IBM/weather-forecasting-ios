@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
+[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://cloud.ibm.com)
 [![Platform](https://img.shields.io/badge/platform-ios_swift-lightgrey.svg?style=flat)](https://developer.apple.com/swift/)
 
 # Create an iOS weather application in Swift
@@ -17,7 +17,7 @@ When you have completed this code pattern, you will understand how to:
 
 ## Steps
 
-> As an alternative to the steps below, you can [create this project as a starter kit on IBM Cloud](https://console.bluemix.net/developer/appledevelopment/create-app?defaultDeploymentToolchain=&defaultLanguage=IOS_SWIFT&env_id=ibm%3Ayp%3Aus-south&navMode=starterkits&starterKit=90b94b71-caf1-3e2b-a48e-bad99759b189), which automatically provisions required services, and injects service credentials into a custom fork of this pattern. Then, you can skip directly to step 4 below.
+> As an alternative to the steps below, you can [create this project as a starter kit on IBM Cloud](https://cloud.ibm.com/developer/appledevelopment/create-app?defaultDeploymentToolchain=&defaultLanguage=IOS_SWIFT&env_id=ibm%3Ayp%3Aus-south&navMode=starterkits&starterKit=90b94b71-caf1-3e2b-a48e-bad99759b189), which automatically provisions required services, and injects service credentials into a custom fork of this pattern. Then, you can skip directly to step 4 below.
 
 1. [Install developer tools](#1-install-developer-tools)
 1. [Install dependencies](#2-install-dependencies)
@@ -66,7 +66,7 @@ $ pod install
 
 ### 3. Create a Weather service instance
 
-Use the [IBM Cloud Catalog](https://console.ng.bluemix.net/catalog/) and create a [Weather Company Data](https://console.ng.bluemix.net/catalog/services/weather-company-data/) service instance.
+Use the [IBM Cloud Catalog](https://cloud.ibm.com/catalog/) and create a [Weather Company Data](https://cloud.ibm.com/catalog/services/weather-company-data/) service instance.
 
 A `WeatherCredentials.plist` configuration file is included in the Xcode project that includes credential configurations for Weather service. Find the credentials for your `WeatherCredentials.plist` file by clicking the **Service Credentials** button:
 
