@@ -59,7 +59,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Register observer
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didBecomeActive),
-                                               name: .UIApplicationDidBecomeActive,
+                                               name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
 
         // Setup location services
@@ -156,7 +156,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         container.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
 
         // Create our UIActivityIndicatorView
-        let actInd: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let actInd: UIActivityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
         actInd.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         actInd.center = container.center
         actInd.color = UIColor.black
@@ -193,7 +193,7 @@ extension ViewController {
 
     // Helper function to center the map on a current location
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
@@ -257,9 +257,9 @@ extension ViewController {
         // If an alert is not currently being displayed
         if self.presentedViewController == nil {
             // Set alert properties
-            let alert = UIAlertController(title: "Weather Failed", message: error.description, preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Weather Failed", message: error.description, preferredStyle: UIAlertController.Style.alert)
             // Add an action to the alert
-            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
             // Show the alert
             self.present(alert, animated: true, completion: nil)
         }
@@ -294,7 +294,7 @@ extension ViewController {
 
         guard let username = credentials["weatherinsightsUsername"] as? String, !username.isEmpty,
             let password = credentials["weatherinsightsPassword"] as? String, !password.isEmpty,
-            let host = credentials["weatherinsightsHost"] as? String , !host.isEmpty else {
+            let host = credentials["weatherinsightsHost"] as? String, !host.isEmpty else {
 
                 self.showAlert(NetworkingError.missingCredentials)
                 return

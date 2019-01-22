@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7351AFF0F3C243218C4FDE37 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 0A003507533B46D5B6FB7E3B /* .gitignore */; };
-		CA1D2327BC424AC6BB0B046A /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = D5CDFC2BD4714B0484769605 /* LICENSE */; };
-		1CDBAAE4FD814CCDACE5A804 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 782C6E32B1C44A0FB304CD8F /* BMSCredentials.plist */; };
+		23D63FC309594E4FA5162D1F /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF761FBE4F4F6893BAD56C /* LICENSE */; };
+		E9CCD319EB4049428FC11EA0 /* .gitignore in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A2A27F61949E2A73C3937 /* .gitignore */; };
+		AD10B1A43CA84D16A5EF8716 /* BMSCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE319DB888942909E95B1DC /* BMSCredentials.plist */; };
 		8421BC1C1D99A554007ECB49 /* PinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421BC1B1D99A554007ECB49 /* PinAnnotationView.swift */; };
 		846CD2431D74B8020096CFB7 /* CurrentCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CD2411D74B8020096CFB7 /* CurrentCondition.swift */; };
 		846CD2441D74B8020096CFB7 /* DailyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CD2421D74B8020096CFB7 /* DailyForecast.swift */; };
@@ -35,9 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A003507533B46D5B6FB7E3B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
-		D5CDFC2BD4714B0484769605 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
-		782C6E32B1C44A0FB304CD8F /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
+		5EFF761FBE4F4F6893BAD56C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LICENSE; path = LICENSE; sourceTree = "<group>"; };
+		4F4A2A27F61949E2A73C3937 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = .gitignore; path = .gitignore; sourceTree = "<group>"; };
+		5CE319DB888942909E95B1DC /* BMSCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BMSCredentials.plist; path = BMSCredentials.plist; sourceTree = "<group>"; };
 		7F80DA9AC1CF027D7CFBFA07 /* Pods-weatherforecastingios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherforecastingios.release.xcconfig"; path = "Pods/Target Support Files/Pods-weatherforecastingios/Pods-weatherforecastingios.release.xcconfig"; sourceTree = "<group>"; };
 		8421BC1B1D99A554007ECB49 /* PinAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotationView.swift; sourceTree = "<group>"; };
 		846CD2411D74B8020096CFB7 /* CurrentCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCondition.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		848B4C361D67658E00D485B8 /* weatherforecastingios */ = {
 			isa = PBXGroup;
 			children = (
-				782C6E32B1C44A0FB304CD8F /* BMSCredentials.plist */,
+				5CE319DB888942909E95B1DC /* BMSCredentials.plist */,
 				8421BC1D1D9AB741007ECB49 /* model */,
 				8421BC1E1D9AB75B007ECB49 /* callout */,
 				848B4C371D67658E00D485B8 /* AppDelegate.swift */,
@@ -171,7 +171,6 @@
 				848B4C311D67658E00D485B8 /* Frameworks */,
 				848B4C321D67658E00D485B8 /* Resources */,
 				3648897BF2400BA4C445FE22 /* [CP] Embed Pods Frameworks */,
-				15321EDB05EC943FB0792CF5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,12 +188,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = "bluemix-mobile-devex";
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "cloud-mobile-devx";
 				TargetAttributes = {
 					848B4C331D67658E00D485B8 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -222,7 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CDBAAE4FD814CCDACE5A804 /* BMSCredentials.plist in Resources */,
+				AD10B1A43CA84D16A5EF8716 /* BMSCredentials.plist in Resources */,
 				848B4C421D67658E00D485B8 /* LaunchScreen.storyboard in Resources */,
 				848B4C3F1D67658E00D485B8 /* Assets.xcassets in Resources */,
 				84A0BFA91D996938004616B2 /* callout.xib in Resources */,
@@ -233,21 +232,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15321EDB05EC943FB0792CF5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weatherforecastingios/Pods-weatherforecastingios-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		153DE8A5BA9F8A875FC54F66 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,12 +335,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -406,12 +392,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -452,12 +440,11 @@
 				INFOPLIST_FILE = "weatherforecastingios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.bluemix.weatherforecastingios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cloud.weatherforecastingios;
 				PRODUCT_NAME = Weather;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -469,15 +456,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "weatherforecastingios/Info.plist";
+				INFOPLIST_FILE = weatherforecastingios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.bluemix.weatherforecastingios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cloud.weatherforecastingios;
 				PRODUCT_NAME = Weather;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
