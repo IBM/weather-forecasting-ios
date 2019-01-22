@@ -82,7 +82,7 @@ extension DailyForecast {
     var minThree: String {
         return unwrap(forecasts?[3].minTemp)
     }
-    
+
     private func unwrap(_ field: CustomStringConvertible?) -> String {
         if let field = field {
             return "\(field)"

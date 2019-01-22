@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'weatherforecastingios' do
     pod 'BMSCore', '~> 2.0'
@@ -12,7 +12,7 @@ target 'weatherforecastingios' do
         installer.pods_project.targets.each do |target|
             if ['SwiftCloudant'].include? target.name
                 target.build_configurations.each do |config|
-                    config.build_settings['SWIFT_VERSION'] = '3.2'
+                    config.build_settings['SWIFT_VERSION'] = '4.2'
                 end
             end
         end
