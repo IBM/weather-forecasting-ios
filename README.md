@@ -3,8 +3,6 @@
 
 # Create an iOS weather application in Swift
 
-> We have a similar pattern available for [Android](https://github.com/IBM/weather-forecasting-android), as well!
-
 In this code pattern, you will create an iOS weather forecasting app using Apple Maps and the Weather Company Data service. Use this service to consume current conditions or hourly, daily, and intraday forecasts based on Apple Maps geolocation coordinations of your user's device. Use this pattern to solve real business problems where weather has a significant impact on the outcome.
 
 When you have completed this code pattern, you will understand how to:
